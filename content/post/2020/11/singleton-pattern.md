@@ -212,4 +212,3 @@ var singleton = function(fn) {
 ```
 
 结合es6的class语法糖也可以写出java饿汉式，但是没有java的线程安全问题，代码不再赘述。
-
