@@ -93,6 +93,7 @@ public class Singleton {
     public static Singleton getInstance(){
         return SingletonHoler.INSTANCE;
     }
+}
 ```
 
 静态内部类的效果和双重检查模式差不多，但是实现上更简单。当Singleton第一次被加载时，并不需要去加载SingletonHoler，只有当getInstance()方法第一次被调用时，才会去初始化INSTANCE, 第一次调用getInstance()方法会导致虚拟机加载SingletonHoler类，这种方法不仅能确保线程安全，也能保证单例的唯一性，同时也延迟了单例的实例化。那么静态内部类是如何实现线程安全的呢？我们来看下类加载的方式：
